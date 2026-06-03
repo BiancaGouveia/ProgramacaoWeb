@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* overflow ajusta o que passa na estilização*/
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+button {
+    margin: 20px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.card p {
+    margin-left: 20px;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
