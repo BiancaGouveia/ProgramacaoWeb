@@ -4,3 +4,12 @@
     . criar grid de forma estática
     . deixar um grid dinâmico com lista local (mock)
     . consumir os dados de uma api
+
+
+
+
+# -> Objetivos da terceira aula:
+    . desafio: ao clicar na imagem do pet, deve virar
+        e mostrar os dados do dono do pet.
+
+        
