@@ -1,4 +1,4 @@
-const apiUrl = 'https://petadopt.onrender.com/pet/pets';
+const apiUrl = 'https://petadopt.onrender.com/pet/pets?page=1&limit=45';
 
 const container = document.getElementById('cardsContainer');
 const btnCarregar = document.getElementById('btnCarregar');
@@ -11,20 +11,29 @@ btnCarregar.addEventListener('click', async () => {
     const data = await resposta.json();
     const pets = data.pets;
 
+    console.log(pets)   // função que fora adicionada
+
     const cardsHTML = pets.map((pet) => `
-      <div class="card">
-        <img src="${pet.images[0]}" alt="${pet.name}">
-        <div class="card-content">
-          <h2>${pet.name}</h2>
-          <p>Cor: ${pet.color}</p>
-          <button class="btn-comprar" data-titulo="${pet.name}">
-            Adotar
-          </button>
-        </div>
-      </div>
+    <div class="card flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="${pet.images[0]}" alt="${pet.name}">
+    </div>
+    <div class="flip-card-back">
+      <h2>${pet.name}</h2>
+        <p>Cor: ${pet.color}</p>
+        <button class="btn-comprar" data-titulo="${pet.name}">
+          Adotar
+        </button>
+    </div>
+  </div>
+</div>
     `).join('');
 
-    container.innerHTML = cardsHTML;
+    container.innerHTML = cardsHTML + `
+
+
+    `;
   } catch (erro) {
     console.error(erro);
     container.innerHTML = '<p class="mensagem">Erro ao buscar dados na API.</p>';
